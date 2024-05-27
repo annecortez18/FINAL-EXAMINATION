@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPLOYEE LIST</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bulma/bulma.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="hero has-background-danger 0-is-italic">
+        <div class="hero-body">
+        </div>
+      
+        <div class="fixed1">
+             </div>
+         
+        <div class="employee_list">
+            <h2 class="employee is-size-3 has-text-weight-bold ">Employee List</h2>
+         </div>
+         
+        <div class="columns mt-2 is-centered">
+        <div class="column is-3">
+            <aside class="menu has-background-link-dark">
+                <ul class="menu-list">
+                    <b><li><a class= "has-background-primary-dark is-size-3">EMPLOYEE LIST</a></li></b>
+                    <b><li><a class="has-background-success is-size-3"> PERSONAL INFO</a></li></b>
+                    <b><li><a class= "has-background-primary-dark is-size-3">EDUCATIONAL INFO</a></li></b>
+                    <b><li><a class="has-background-success is-size-3">WORK EXP</a></li></b>
+                    <b><li><a class= "has-background-primary-dark is-size-3">TRAININGS</a></li></b>
+                    <b><li><a  class="has-background-success is-size-3">LOG OUT</a></li></b>
+                </ul>
+            </aside>
+        </div>
+    
+        
+      <div class="column is-8">
+        <table class="table is-bordered is-striped is-fullwidth">
+            <head>
+                <tr>
+                    <b><th colspan="5" class="has-text-centered has-background-info-dark">EMPLOYEE LIST</th></tr></b>
+                </tr>
+                    <tr class="has-text-link">
+                        <th class="has-text-link">Employee</th>
+                        <td>LAST NAME</td>
+                        <td>FIRST NAME</td>
+                        <td>GENDER</td>
+                        <td>POSITION</td>
+                    </tr>
+                </head>
+                <body>
+                    <tr class="has-text-link">
+                        <th class="has-text-link">Employee 1</td>
+                        <td>Cortez</td>
+                        <td>Roxanne</td>
+                        <td>Female</td>
+                        <td>Secretary</td>
+                    </tr>
+                    <tr>
+                        <th class="has-text-link">Employee 2</th>
+                        <td>Gabaldon</td>
+                        <td>Jonathan</td>
+                        <td>Male</td>
+                        <td>Guard</td>
+                    </tr>
+                    <tr class="has-text-link">
+                        <th class="has-text-link">Employee 3</td>
+                        <td>Oca</td>
+                        <td>Mayliecel</td>
+                        <td>Female</td>
+                        <td>Assistant Secretary</td>
+                    </tr>
+                    <tr>
+                        <th class="has-text-link">Employee 4</th>
+                        <td>Vinluan</td>
+                        <td>Jenny</td>
+                        <td>Female</td>
+                        <td>Teacher</td>
+                    </tr>
+                    <tr class="has-text-info">
+                        <th class="has-text-link">Employee 5</th>
+                        <td>Domingo</td>
+                        <td>Heizel</td>
+                        <td>Female</td>
+                        <td>Manager</td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+      </div>
+</body>
+</html>
