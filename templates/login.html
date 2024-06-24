@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flask App</title>
-
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bulma/bulma.css') }}">
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
-
 <body>
-  <center>
-    <div style="width: 300px;" class="container">
-    </div>
-    <h1 class="title has-text-link is-size-1 has-text-centered">LOGIN</h1>
     <form class="box has-background-info" action="check-user" method="POST">
+      <center>
+        <h1 class="tittle has-text-link is-size-1 has-text-centered">LOGIN</h1>
+
       <div class="field">
         <label class="label">USERNAME:</label>
         <div class="control">
-          <input class="input" type="text" name="username" placeholder="e.g. anne@example.com" required />
+          <input class="input" name="username" type="username" placeholder="Username" />
         </div>
       </div>
 
       <div class="field">
         <label class="label">PASWORD:</label>
         <div class="control">
-          <input class="input" type="password" name="password" placeholder="........" required />
+          <input class="input" name="password" type="password"  placeholder="Password" />
         </div>
       </div>
       <center>
         <button type="submit" class="button has-text-black has-background-danger">LOGIN </button>
+
     </form>
   </center>
-  </center>
-</body>
-
-</html>
-
-
-
-
-
-
-
+</center>
 </body>
 
 </html>

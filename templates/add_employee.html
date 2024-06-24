@@ -1,104 +1,56 @@
 <!DOCTYPE html>
-<html lang=en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bulma/bulma.css">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'Bulma/bulma.css')}}">
     <title>Document</title>
+<link rel="stylesheet" href="bulma/bulma.css">
+<link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .box{
+          width: 500px;
+        }
+      </style>
 </head>
 <body>
-    <section class="hero has-background-danger 0-is-italic">
-        <div class="hero-body">
-        <center> <p class="title">Employee Information System</p></center>
-        <b><center><p class="subtitle">Roxanne A. Cortez</p></center></b>
-        </div>
-      </section>
-
-      
-        <div class="columns mt-2 is-centered">
-        <div class="column is-3">
-            <aside class="menu has-background-link-dark">
-                <ul class="menu-list">
-                    <b><li><a class= "has-background-primary-dark is-size-3">EMPLOYEE LIST</a></li></b>
-                    <b><li><a class="has-background-success is-size-3"> PERSONAL INFO</a></li></b>
-                    <b><li><a class= "has-background-primary-dark is-size-3">EDUCATIONAL INFO</a></li></b>
-                    <b><li><a class="has-background-success is-size-3">WORK EXP</a></li></b>
-                    <b><li><a class= "has-background-primary-dark is-size-3">TRAININGS</a></li></b>
-                    <b><li><a  class="has-background-success is-size-3">LOG OUT</a></li></b>
-                </ul>
-            </aside>
-        </div>
-    
+    <center>
+        <form class="box has-background-info" action="add-employee" method="POST">
+        <h1 class="title has-text-link is-size-1 has-text-centered">ADD EMPLOYEE</h1>
         
-      <div class="column is-8">
-        <div style= "width: 500px;" class="container> 
-        <h1 class="has-text-link is-size-1 has-text-centered">ADD EMPLOYEE</h1>
-<form class="box has-background-info">
-  <div class="field">
-    <label class="label">EMPLOYEE ID:</label>
-    <div class="control">
-    <input class="input"  type="EMPLOYEE ID" />
-    </div>
-    </div>
-  </div>
+          <div class="field">
+            <label class="label">Employee ID:</label>
+            <div class="control">
+            <input class="input" name="emp_id" type="id" placeholder="Employee ID"/>
+            </div>
+            </div>
+        
+            <div class="field">
+              <label class="label">Last Name:</label>
+              <div class="control">
+              <input class="input" name="lname" type="name" placeholder="Last Name" />
+              </div>
+             </div>
 
-    <div class="field">
-      <label class="label">LAST NAME:</label>
-      <div class="control">
-        <input class="input" type="LAST NAME"  />
-      </div>
-     </div>
-     
-     <div class="field">
-        <label class="label">FIRST NAME:</label>
-        <div class="control">
-          <input class="input" type="FIRST NAME"  />
-        </div>
-       </div>
+             <div class="field">
+                <label class="label">First Name:</label>
+                <div class="control">
+                <input class="input" name="fname" type="name" placeholder="First Name" />
+                </div>
+               </div>
 
-       <div class="field">
-        <label class="label">MIDDLE NAME:</label>
-        <div class="control">
-          <input class="input" type="MIDDLE NAME" />
-        </div>
-       </div>
+               <div class="field">
+                <label class="label">Middle Name:</label>
+                <div class="control">
+                <input class="input" name="mname" type="name" placeholder="Middle Name" />
+                </div>
+               </div>
 
-       <div class="field">
-        <label class="label">ADDRESS:</label>
-        <div class="control">
-          <input class="input" type="ADDRESS"  />
-        </div>
-       </div>
-       <div class="field">
-        <label class="label">BIRTHDAY:</label>
-        <div class="control">
-          <input class="input" type="date" placeholder="" />
-        </div>
-       </div>
-       <div class="field">
-        <label class="label">CIVIL STATUS:</label>
-        <div class="control">
-          <div class="select">
-          <select>
-       <option>single</option> 
-       <option>married</option>
-       <option>divorced</option>
-          </select>
-          </div>
-          </div>
-          </div>
-          <input class="input" type="CIVIL STATUS" placeholder="" />
-        </div>
-       </div>
-       <center>
-        <button class="button has-text-black has-background-danger">SAVE </button>
-       </form>
-   </center>
-
-
-
-
-
-
+             <button type= "submit" class="button has-text-black has-background-danger">ADD </button>
+            </form>
+        </center>
+        
 </body>
 </html>

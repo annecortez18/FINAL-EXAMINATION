@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMPLOYEE LIST</title>
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bulma/bulma.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'Bulma/bulma.css')}}">
+    <link rel="stylesheet" href="static/bulma/bulma.css">
+    <title>Employees</title>
 </head>
-
 <body>
-    <div class="hero has-background-danger 0-is-italic">
+    <section class="hero has-background-danger 0-is-italic">
         <div class="hero-body">
+        <center> <p class="title">Employee Information System</p></center>
+        <b><center><p class="subtitle">cortez roxanne</p></center></b>
         </div>
-      
-        <div class="fixed1">
-             </div>
-         
-        <div class="employee_list">
-            <h2 class="employee is-size-3 has-text-weight-bold ">Employee List</h2>
-         </div>
-         
+      </section>
+      <center>  
+        {% if message != "" %}
+    <div class="has-bg-danger messagebox">{{ message }}</div>
+     {% endif %} 
+    </center>
+
         <div class="columns mt-2 is-centered">
         <div class="column is-3">
             <aside class="menu has-background-link-dark">
@@ -38,7 +37,7 @@
         
       <div class="column is-8">
         <table class="table is-bordered is-striped is-fullwidth">
-            <head>
+            <thead>
                 <tr>
                     <b><th colspan="5" class="has-text-centered has-background-info-dark">EMPLOYEE LIST</th></tr></b>
                 </tr>
@@ -46,46 +45,26 @@
                         <th class="has-text-link">Employee</th>
                         <td>LAST NAME</td>
                         <td>FIRST NAME</td>
-                        <td>GENDER</td>
-                        <td>POSITION</td>
+                        <td>MIDDLE NAME</td>
+                        <td>ACTION</td>
                     </tr>
-                </head>
-                <body>
-                    <tr class="has-text-link">
-                        <th class="has-text-link">Employee 1</td>
-                        <td>Cortez</td>
-                        <td>Roxanne</td>
-                        <td>Female</td>
-                        <td>Secretary</td>
-                    </tr>
+                
+                    {% for employee in employee %}
                     <tr>
-                        <th class="has-text-link">Employee 2</th>
-                        <td>Gabaldon</td>
-                        <td>Jonathan</td>
-                        <td>Male</td>
-                        <td>Guard</td>
+                        <td>{{ employee[0] }}</td>
+                        <td>{{ employee[1] }}</td>
+                        <td>{{ employee[2] }}</td>
+                        <td>{{ employee[3] }}</td>
+                        <td>{{ employee[4] }}</td>
+                    <td>
+                        <form id="deleteForm{{ employee[0] }}" method="POST" action="{{ url_for('update_employee', emp_id=employee[0]) }}" onsubmit="return confirm('Are you sure you want to delete this employee?');">
+                            <input type="hidden" name="emp_id" value="{{ employee[0] }}">
+                            <a href="{{ url_for('update_form', emp_id=employee[0]) }}">Update</a>
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </td>
                     </tr>
-                    <tr class="has-text-link">
-                        <th class="has-text-link">Employee 3</td>
-                        <td>Oca</td>
-                        <td>Mayliecel</td>
-                        <td>Female</td>
-                        <td>Assistant Secretary</td>
-                    </tr>
-                    <tr>
-                        <th class="has-text-link">Employee 4</th>
-                        <td>Vinluan</td>
-                        <td>Jenny</td>
-                        <td>Female</td>
-                        <td>Teacher</td>
-                    </tr>
-                    <tr class="has-text-info">
-                        <th class="has-text-link">Employee 5</th>
-                        <td>Domingo</td>
-                        <td>Heizel</td>
-                        <td>Female</td>
-                        <td>Manager</td>
-                    </tr> 
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
