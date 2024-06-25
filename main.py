@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 from users import Users
-from employee import Employee
+from employees import Employee
 
 app = Flask(__name__)
 app.secret_key = "ANNE"
@@ -66,7 +66,7 @@ def update_employee():
     fname = request.form["fname"]
     mname = request.form["mname"]
     
-    success = Employees.update_employee(emp_id, lname, fname, mname)
+    success = Employee.update_employee(emp_id, lname, fname, mname)
 
     if success:
         session["message"] = "Successfully updated"
@@ -75,8 +75,17 @@ def update_employee():
 
     return redirect('/employee-list')
 
+@app.route('/delete/<emp_id>', methods=['POST'])
+def delete_employee(emp_id):
+    success = Employee.delete_employee(emp_id)
+
+    if success:
+        session["message"] = "Successfully deleted employee."
+    else:
+        session["message"] = "Failed to delete employee."
+
+    return redirect('/employee-list')
 
 if __name__ == '__main__':
     app.run()
-
 
